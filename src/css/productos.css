@@ -1,0 +1,275 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos del botón de volver */
+.back-to-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Hero Section */
+.product-hero {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title span {
+    color: #ffc107;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons .btn {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #333;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #ffca28;
+    border-color: #ffca28;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons .btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 1.5rem;
+    border-bottom: none;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Formulario */
+.form-control,
+.form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #a777e3;
+    box-shadow: 0 0 0 0.25rem rgba(167, 119, 227, 0.25);
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-radius: 10px 0 0 10px !important;
+}
+
+/* Validación de procesador */
+.card.p-3 {
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.card.p-3 .invalid-feedback {
+    display: none;
+    margin-top: 0.5rem;
+    color: #dc3545;
+    font-size: 0.875em;
+}
+
+.card.p-3.is-invalid {
+    border: 1px solid #dc3545;
+}
+
+.card.p-3.is-invalid .invalid-feedback {
+    display: block;
+}
+
+/* Iconos personalizados */
+.intel-icon {
+    color: #0071c5;
+}
+
+.amd-icon {
+    color: #ed1c24;
+}
+
+.apple-icon {
+    color: #000000;
+}
+
+.ssd-icon {
+    color: #4CAF50;
+}
+
+.graphics-icon {
+    color: #9C27B0;
+}
+
+.touch-icon {
+    color: #2196F3;
+}
+
+/* Tabla */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 700;
+    background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(167, 119, 227, 0.1);
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Botones de acción */
+.btn-edit {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #138496;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el mensaje de confirmación */
+#successMessage {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #dee2e6 !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+#successMessage .text-dark {
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .back-to-home {
+        top: 10px;
+        left: 10px;
+    }
+
+    .back-to-home .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}

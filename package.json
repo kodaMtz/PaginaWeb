@@ -1,0 +1,20 @@
+{
+  "name": "tiendalaptopkl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodaMtz/PaginaWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kodaMtz/PaginaWeb/issues"
+  },
+  "homepage": "https://github.com/kodaMtz/PaginaWeb#readme",
+  "description": ""
+}

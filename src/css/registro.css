@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/image/Patrones.jpg");
+  opacity: 0.2; /* Transparencia del patrón */
+  z-index: -1; /* Detrás del contenido */
+}
+
+.parte-izquierda,
+.parte-derecha {
+  width: 100%;
+  height: 50vh;
+}
+
+.parte-izquierda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 2rem;
+}
+
+.parte-izquierda > p {
+  padding: 2rem;
+  font-size: 1.6rem;
+}
+
+/* Estilos para la parte derecha e imagen */
+.parte-derecha {
+  overflow: hidden; /* Evita desbordamiento */
+}
+
+.parte-derecha img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene relación de aspecto cubriendo el espacio */
+}
+
+@media (min-width: 1000px) {
+  main {
+    flex-direction: row;
+  }
+
+  .parte-izquierda,
+  .parte-derecha {
+    width: 50%;
+    height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-logo {
+    margin-right: auto;
+  }
+
+  .link-derecha {
+    margin-left: auto;
+  }
+}
+
+.parte-derecha {
+  border: 20px solid #5851bd;
+  border-radius: 15px;
+  animation: pulseBorder 2s infinite alternate;
+  box-shadow: 0 0 10px rgba(25, 11, 213, 0.3);
+}
+
+@keyframes pulseBorder {
+  from {
+    border-color: #c1c1ec;
+    box-shadow: 0 0 10px rgba(88, 81, 189, 0.3);
+  }
+  to {
+    border-color: #2615de;
+    box-shadow: 0 0 20px rgba(157, 149, 255, 0.6);
+  }
+}
+
+/* CONTENEDOR DEL HEADER */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* TEXTO DE MARCA */
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* ÍCONOS SOCIALES */
+.social-login {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE: para pantallas pequeñas */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+  }
+
+  .slogan {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap");
+
+#contenedor-formulario h1 {
+  font-family: "Playwrite MX Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #000000;
+}
+
+#contenedor-formulario {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-right: none;
+}
+
+.form-control {
+  border-left: none;
+  padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+/* Estilos para botones (si los añades) */
+.btn-custom {
+  background-color: #4a6baf;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #3a5a9f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  #contenedor-formulario {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+/* Estilos para cada contenedor de bootstrap */
+/* Contenedor form-floating */
+.form-floating {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Input de contraseña */
+.form-floating .form-control {
+  border-radius: 12px;
+  padding: 1rem 1rem;
+  /* Un poco más de padding para el floating */
+  background-color: #feebff;
+  /* Rosa claro */
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: auto;
+  /* Altura automática para el floating */
+}
+
+/* Label flotante */
+.form-floating label {
+  color: #6c757d;
+  /* Color gris para el label */
+  padding: 0.75rem 1rem;
+  /* Mismo padding que el input */
+  transition: all 0.2s ease;
+}
+
+/* Efecto hover */
+.form-floating .form-control:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto focus - IMPORTANTE para floating */
+.form-floating .form-control:focus,
+.form-floating .form-control:not(:placeholder-shown) {
+  border-color: #5851bd;
+  /* Morado */
+  box-shadow: 0 0 0 0.25rem rgba(88, 81, 189, 0.25);
+  background-color: #ffffff;
+  /* Blanco en focus */
+  padding-top: 1.625rem;
+  /* Ajuste para floating */
+  padding-bottom: 0.625rem;
+}
+
+.form-floating .form-control:focus~label,
+.form-floating .form-control:not(:placeholder-shown)~label {
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  color: #5851bd;
+  /* Morado cuando está activo */
+  opacity: 1;
+}
+
+/* Placeholder - Oculto para floating */
+.form-floating .form-control::placeholder {
+  color: transparent;
+}
+
+/* Estado inicial del label */
+.form-floating>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+}
+
+/* Contenedor row */
+.row {
+  margin-bottom: 1.5rem;
+  /* Igual que el espaciado de otros inputs */
+}
+
+/* Cada columna individual */
+.col {
+  padding: 0 0.5rem;
+  /* Espaciado entre columnas */
+}
+
+/* Inputs de nombre y apellido */
+.row .form-control {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  background-color: #feebff;
+  /* Mismo rosa claro */
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover */
+.row .form-control:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto focus */
+.row .form-control:focus {
+  border-color: #5851bd;
+  /* Morado */
+  box-shadow: 0 0 0 0.25rem rgba(88, 81, 189, 0.25);
+  background-color: #ffffff;
+  /* Blanco en focus */
+  outline: none;
+}
+
+/* Placeholder */
+.row .form-control::placeholder {
+  color: #000000;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Ajuste para el primer input (nombre) */
+.col:first-child .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+/* Ajuste para el segundo input (apellido) */
+.col:last-child .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.input-group.flex-nowrap {
+  border-radius: 12px;
+  /* Añade bordes más redondeados */
+  transition: all 0.3s ease;
+  /* Agrega transición suave */
+  margin-bottom: 1rem;
+  /* Espaciado inferior */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
+
+/* El span con el icono @ */
+.input-group.flex-nowrap .input-group-text {
+  background-color: #5851bd;
+  /* Color de fondo */
+  border-right: none;
+  /* Elimina borde derecho para unión con input */
+  color: #ffffff;
+  /* Color del texto/@ */
+  padding: 0.75rem 1rem;
+  /* Ajuste de padding */
+}
+
+/* El campo de input */
+.input-group.flex-nowrap .form-control {
+  border-left: none;
+  /* Elimina borde izquierdo para unión con el span */
+  padding: 0.75rem 1rem;
+  /* Ajuste de padding */
+  background-color: #feebff;
+  /* Fondo blanco */
+  transition: all 0.3s ease;
+  /* Transición suave */
+}
+
+/* Efecto hover para todo el grupo */
+.input-group.flex-nowrap:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  /* Sombra más pronunciada al hover */
+}
+
+/* Efecto focus en el input */
+.input-group.flex-nowrap .form-control:focus {
+  border-color: #86b7fe;
+  /* Color del borde al focus */
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  /* Sombra azul al focus */
+  background-color: #ffffff;
+  /* Mantener fondo blanco */
+}
+
+/* Placeholder personalizado */
+.input-group.flex-nowrap .form-control::placeholder {
+  color: #000000;
+  /* Color del placeholder */
+  opacity: 0.8;
+  /* Ligera transparencia */
+  font-style: italic;
+  /* Estilo cursiva */
+}
+
+/* Estilo para el cuadro email */
+.input-group.mb-3 {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Asegura ancho completo */
+}
+
+.input-group.mb-3 .form-control {
+  border-right: none;
+  /* Elimina borde derecho para unión con el span */
+  padding: 0.75rem 1rem;
+  background-color: #feebff;
+  transition: all 0.3s ease;
+  border-left: 1px solid #ced4da;
+  /* Mantiene borde izquierdo */
+}
+
+.input-group.mb-3 .input-group-text {
+  background-color: #5851bd;
+  border-left: none;
+  /* Elimina borde izquierdo */
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid #ffffff;
+  /* Mantiene borde derecho */
+}
+
+.input-group.mb-3:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.input-group.mb-3 .form-control:focus {
+  border-color: #5851bd;
+  box-shadow: 0 0 0 0.25rem rgba(88, 81, 189, 0.25);
+  background-color: #ffffff;
+  /* Mismo color rosa que el username */
+  position: relative;
+  z-index: 3;
+}
+
+/* Placeholder consistente */
+.input-group.mb-3 .form-control::placeholder {
+  color: #000000;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Ajuste especial para el texto del span */
+#basic-addon2 {
+  font-weight: normal;
+  color: #fefefe;
+  /* Color más suave para el dominio de ejemplo */
+}
+
+.error-mensaje {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-input {
+  border: 2px solid red !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.is-valid {
+  border-color: #28a745 !important;
+}
+
+.error-mensaje {
+  color: #dc3545;
+  font-size: 0.875em;
+  display: none;
+  margin-top: 0.25rem;
+}

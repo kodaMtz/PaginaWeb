@@ -1,0 +1,261 @@
+:root {
+  /* Nueva paleta de colores profesional */
+  --primary-blue: hsl(210, 100%, 50%);
+  /* Azul profesional */
+  --secondary-purple: hsl(270, 80%, 60%);
+  /* Morado neón suavizado */
+  --accent-purple: hsl(280, 100%, 70%);
+  /* Morado neón para detalles */
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 95%);
+  --medium-gray: hsl(0, 0%, 85%);
+  --dark-gray: hsl(0, 0%, 30%);
+  --glass-bg-color: hsla(0, 0%, 100%, 0.2);
+  --text-dark: hsl(0, 0%, 20%);
+  --text-light: hsl(0, 0%, 100%);
+  --blur: blur(8px);
+  --button-hover-color: hsla(210, 100%, 50%, 0.1);
+  --input-bg: hsla(0, 0%, 100%, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--light-gray), var(--white));
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Efectos de iluminación sutil */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: glowMove 12s ease-in-out infinite alternate;
+}
+
+body::before {
+  background-color: var(--primary-blue);
+  left: -50px;
+  bottom: -50px;
+}
+
+body::after {
+  background-color: var(--secondary-purple);
+  right: -50px;
+  top: -50px;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(-10%, 10%) scale(0.9);
+  }
+
+  100% {
+    transform: translate(10%, -10%) scale(1.1);
+  }
+}
+
+/* Contenedor del login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Formulario */
+.login-form {
+  background: var(--white);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--medium-gray);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 10px hsla(270, 80%, 60%, 0.2);
+  transition: all 0.4s ease;
+}
+
+.login-form:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 15px hsla(280, 100%, 70%, 0.3);
+}
+
+/* Título */
+.login-form h2 {
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.login-form h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg,
+      transparent,
+      var(--primary-blue),
+      var(--secondary-purple),
+      transparent);
+  animation: shine 3s linear infinite;
+}
+
+.login-form h5 {
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Campos del formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px;
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: var(--medium-gray);
+  opacity: 1;
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px hsla(210, 100%, 50%, 0.2),
+    0 0 10px hsla(270, 80%, 60%, 0.2);
+}
+
+/* Botón */
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(to right,
+      var(--primary-blue),
+      var(--secondary-purple));
+  border: none;
+  border-radius: 6px;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 15px hsla(280, 100%, 70%, 0.4);
+}
+
+/* Enlace olvidé contraseña */
+.forgot-password {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--dark-gray);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+/* Efectos adicionales */
+.login-form::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg,
+      var(--primary-blue),
+      var(--secondary-purple),
+      var(--accent-purple));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.login-form:hover::before {
+  opacity: 0.1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.8rem;
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem;
+  }
+}

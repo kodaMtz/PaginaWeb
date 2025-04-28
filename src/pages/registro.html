@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REGISTRO DE USUARIO</title>
+  <link rel="icon" href="../assets/icon/compu.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/registro.css" />
+  <link rel="stylesheet" href="../css/registro_Boots.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <!-- Texto de marca -->
+      <div class="brand">
+        <h1>KODALUX</h1>
+        <p class="slogan">Laptops Gaming</p>
+      </div>
+      <div class="social-login">
+        <!-- Inicio con Google -->
+        <a href="#" class="social-icon google-login" aria-label="Iniciar con Google">
+          <img src="../assets/icon/cromo.png" alt="Google">
+
+        </a>
+
+        <!-- Redes sociales -->
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <img src="../assets/icon/youtube.png" alt="YouTube">
+          </a>
+          <a href="#" class="social-icon" aria-label="X (Twitter)">
+            <img src="../assets/icon/gorjeo.png" alt="X">
+
+          </a>
+          <a href="#" class="social-icon" aria-label="TikTok">
+            <img src="../assets/icon/tik-tok.png" alt="TikTok">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!--Parte izquerda-->
+    <div class="parte-izquierda">
+      <form id="contenedor-formulario">
+        <h1>Registro de usuario</h1>
+        <br />
+
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="First name" />
+            <span class="error-mensaje"></span>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" />
+            <span class="error-mensaje"></span>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">@</span>
+          <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Nombre de usuario"
+            aria-describedby="addon-wrapping" />
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="CuentaGmail@gmail.com" aria-label="CuentaGmail@gmail.com"
+            aria-describedby="basic-addon2" />
+
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="submit">Registrate</button>
+        </div>
+
+      </form>
+    </div>
+    <!--Parte derecha-->
+    <div class="parte-derecha">
+      <img src="../assets/image/Registro.jpg" alt="Imagen de registro" title="Registrate con nosotros 😊" />
+    </div>
+    </div>
+  </main>
+  <script src="../../src/js/Registro2.js"></script>
+</body>
+
+</html>
