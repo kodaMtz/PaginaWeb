@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Variables globales
-  let products = JSON.parse(sessionStorage.getItem("products")) || [];
+  let products = JSON.parse(localStorage.getItem("products")) || [];
 
   let originalProductData = null;
   let currentEditIndex = null;
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validar que no esté repetido (solo si ya hay caracteres)
     if (idValue.length > 0) {
-      const productos = JSON.parse(sessionStorage.getItem("products")) || [];
+      const productos = JSON.parse(localStorage.getItem("products")) || [];
       const idRepetido = productos.some((producto) => producto.Id === idValue);
 
       if (idRepetido) {
@@ -92,15 +92,44 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("productStock")
     .addEventListener("input", function () {
       if (this.value <= 0) {
-        this.value = 30;
+        this.value = 100;
         showNegativeNumberAlert();
       }
     });
 
   function showNegativeNumberAlert() {
-    alert(
-      "No se permiten valores negativos ni nulos. El valor ha sido ajustado a su precio por default."
-    );
+    // Crear el elemento del toast si no existe
+    let toast = document.getElementById("custom-toast");
+
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "custom-toast";
+      toast.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color:rgb(68, 77, 255);
+          color: white;
+          padding: 15px 25px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(9, 1, 1, 0.2);
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+          z-index: 1000;
+          font-family: Arial, sans-serif;
+        `;
+      document.body.appendChild(toast);
+    }
+
+    // Mensaje y animación
+    toast.textContent =
+      "No se permiten valores negativos ni nulos. El valor ha sido ajustado a su precio por default.";
+    toast.style.opacity = "1";
+
+    // Ocultar después de 3 segundos
+    setTimeout(() => {
+      toast.style.opacity = "0";
+    }, 3000);
   }
 
   // Actualizar el valor de la garantía en el slider
@@ -161,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Validar si el ID ya existe
-    const storedProducts = sessionStorage.getItem("products");
+    const storedProducts = localStorage.getItem("products");
     if (storedProducts) {
       const existingProducts = JSON.parse(storedProducts);
       const idExists = existingProducts.some((p) => p.Id === productId);
@@ -172,10 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Agregar nuevo producto
-    products.push(product);
+    const caracteristicaPro =
+      // Agregar nuevo producto
+      products.push(product);
 
-    sessionStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem("products", JSON.stringify(products));
 
     // Mostrar mensaje de éxito
     showSuccessMessage("Producto registrado correctamente");
@@ -210,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Actualizar la tabla de productos
   function updateProductsTable() {
-    sessionStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem("products", JSON.stringify(products));
 
     productsTableContainer.style.display = "block";
     noProductsMessage.style.display = "none";
@@ -334,18 +364,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Dropdown para procesador con valores exactos (incluyendo "Apple M1/M2")
         cell.innerHTML = `
       <select class="form-select form-select-sm" data-field="processor">
-        <option value="Intel" ${
-          value.includes("Intel") ? "selected" : ""
-        }>Intel</option>
-        <option value="AMD" ${
-          value.includes("AMD") ? "selected" : ""
-        }>AMD</option>
-        <option value="Apple M1/M2" ${
-          value.includes("Apple") ? "selected" : ""
-        }>Apple M1/M2</option>
-        <option value="Qualcomm" ${
-          value.includes("Qualcomm") ? "selected" : ""
-        }>Qualcomm</option>
+        <option value="Intel" ${value.includes("Intel") ? "selected" : ""
+          }>Intel</option>
+        <option value="AMD" ${value.includes("AMD") ? "selected" : ""
+          }>AMD</option>
+        <option value="Apple M1/M2" ${value.includes("Apple") ? "selected" : ""
+          }>Apple M1/M2</option>
+        <option value="Qualcomm" ${value.includes("Qualcomm") ? "selected" : ""
+          }>Qualcomm</option>
       </select>
     `;
       } else if (field === "features") {
@@ -354,20 +380,17 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.innerHTML = `
       <div class="d-flex flex-column gap-2">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" data-feature="SSD" ${
-            features.includes("SSD") ? "checked" : ""
+          <input class="form-check-input" type="checkbox" data-feature="SSD" ${features.includes("SSD") ? "checked" : ""
           }>
           <label class="form-check-label">SSD</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" data-feature="Tarjeta Gráfica" ${
-            features.includes("Tarjeta Gráfica") ? "checked" : ""
+          <input class="form-check-input" type="checkbox" data-feature="Tarjeta Gráfica" ${features.includes("Tarjeta Gráfica") ? "checked" : ""
           }>
           <label class="form-check-label">Tarjeta Gráfica</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" data-feature="Pantalla Táctil" ${
-            features.includes("Pantalla Táctil") ? "checked" : ""
+          <input class="form-check-input" type="checkbox" data-feature="Pantalla Táctil" ${features.includes("Pantalla Táctil") ? "checked" : ""
           }>
           <label class="form-check-label">Pantalla Táctil</label>
         </div>
@@ -514,6 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("featureTouch").checked = false;
   }
 
-  // Inicializar el valor de la garantía
+
+  // Inicializar el valor de la garantía//
   updateWarrantyValue();
 });

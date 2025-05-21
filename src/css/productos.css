@@ -272,4 +272,65 @@ body {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
+
+
+    #featuresContainer {
+        position: relative;
+        border: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    #featuresContainer.is-invalid {
+        border-color: #dc3545 !important;
+    }
+
+    #featuresFeedback {
+        color: #dc3545 !important;
+        display: none;
+        position: absolute;
+        bottom: -20px;
+        left: 15px;
+        font-size: 0.875em;
+    }
+
+    /* Sobrescribe cualquier estilo verde que pueda estar aplicándose */
+    .form-check-input.is-invalid~.form-check-label,
+    #featuresContainer.is-invalid .form-check-label {
+        color: inherit !important;
+    }
+
+    /* Estilo para cuando hay error */
+    #featuresContainer.is-invalid .invalid-feedback {
+        display: block !important;
+    }
+
+    /* Añade esto a tu CSS */
+    #featuresContainer.is-invalid {
+        border: 1px solid #dc3545 !important;
+    }
+
+    #featuresFeedback {
+        color: #dc3545 !important;
+        font-size: 0.875em;
+        margin-top: 0.5rem;
+    }
+
+    /* Estilos para campos inválidos */
+    .is-invalid,
+    .is-invalid:focus {
+        border-color: #dc3545 !important;
+    }
+
+    .is-invalid~.invalid-feedback {
+        display: block;
+        color: #dc3545;
+    }
+
+    /* Estilo para vista previa de imagen */
+    .img-thumbnail {
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+        background-color: #fff;
+    }
 }

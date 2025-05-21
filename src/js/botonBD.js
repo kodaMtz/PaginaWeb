@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Evento para el botón ELIMINAR BD
   clearDatabaseBtn.addEventListener("click", function () {
     // Obtener productos del sessionStorage
-    const products = JSON.parse(sessionStorage.getItem("products")) || [];
+    const products = JSON.parse(localStorage.getItem("products")) || [];
 
     // Validar si hay registros (MANTENIENDO ESTA PARTE IGUAL)
     if (products.length === 0) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("confirmDeleteYes")
     .addEventListener("click", function () {
       // Eliminar la BD
-      sessionStorage.removeItem("products");
+      localStorage.removeItem("products");
 
       // Ocultar confirmación y mostrar botón nuevamente
       confirmDiv.classList.add("d-none");

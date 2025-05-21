@@ -19,12 +19,12 @@ document.getElementById("searchButton").addEventListener("click", function () {
     return;
   }
 
-  // ✅ Verificar si el ID existe en sessionStorage["products"]
-  const storedData = sessionStorage.getItem("products");
+  // ✅ Verificar si el ID existe en LocalStorage["products"]
+  const storedData = localStorage.getItem("products");
   if (storedData) {
     try {
       const products = JSON.parse(storedData);
-      const exists = products.some((product) => product.id === searchValue);
+      const exists = products.some((product) => product.Id === searchValue);
       if (!exists) {
         showNotification(
           "⚠️ El ID no se encuentra en los productos almacenados."
@@ -33,6 +33,8 @@ document.getElementById("searchButton").addEventListener("click", function () {
     } catch (e) {
       console.error("Error al parsear sessionStorage['products']:", e);
     }
+  } else {
+    showNotification("💾 La base de datos esta Vacia");
   }
 
   let found = false;
@@ -65,7 +67,7 @@ function showNotification(message) {
   toast.id = "toastNotification";
   toast.className =
     "toast align-items-center text-bg-danger border-0 show position-fixed bottom-0 end-0 m-3";
-  toast.setAttribute("role", "alert");
+  toast.setAttribute("role", "info");
   toast.innerHTML = `
     <div class="d-flex">
       <div class="toast-body">${message}</div>
